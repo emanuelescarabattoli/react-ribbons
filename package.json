@@ -1,0 +1,52 @@
+{
+  "name": "react-ribbons",
+  "version": "1.0.1",
+  "description": "A list of ribbons components for React",
+  "main": "./index.js",
+  "author": {
+    "name": "Emanuele Scarabattoli",
+    "email": "em.scarabattoli@gmail.com",
+    "url": "https://github.com/emanuelescarabattoli"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emanuelescarabattoli/react-ribbons.git"
+  },
+  "keywords": [
+    "ribbons",
+    "react",
+    "components",
+    "packages"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emanuelescarabattoli/react-ribbons/issues"
+  },
+  "homepage": "https://github.com/emanuelescarabattoli/react-ribbons#readme",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.6.0",
+    "eslint-plugin-react": "^7.16.0",
+    "node-sass": "^4.13.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
