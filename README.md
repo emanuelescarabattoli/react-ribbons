@@ -1,10 +1,10 @@
 # React Ribbons
 
-![React Ribbons](https://emanuelescarabattoli.github.io/react-ribbons/favicon_64.png)
+![React Ribbons](https://emanuelescarabattoli.github.io/react-ribbons/favicon-150.png)
 
 A React NPM package with a lot of fancy and easy to use ribbons components.
 
-[https://emanuelescarabattoli.github.io/react-ribbons](https://emanuelescarabattoli.github.io/react-ribbons)
+[Documentation](https://emanuelescarabattoli.github.io/react-ribbons/index.html)
 
 ## Installation
 
