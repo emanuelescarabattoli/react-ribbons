@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import style from "./ReactRibbons.scss";
 
 export const RibbonContainer = ({ children, className }) => {
@@ -20,7 +19,7 @@ RibbonContainer.defaultProps = {
   className: undefined
 };
 
-export const RightCornerRibbon = ({ children, backgroundColor, color, fontFamily }) => {
+const RightCornerRibbon = ({ children, backgroundColor, color, fontFamily }) => {
   return (
     <div className={style.rightCornerRibbon}>
       <svg height="70" width="70">
@@ -41,10 +40,12 @@ RightCornerRibbon.propTypes = {
 };
 
 RightCornerRibbon.defaultProps = {
-  fontFamily: "Arial"
+  fontFamily: "sans",
+  backgroundColor: "#cc0000",
+  color: "#ccffff",
 };
 
-export const RightCornerLargeRibbon = ({ children, backgroundColor, color, fontFamily }) => {
+const RightCornerLargeRibbon = ({ children, backgroundColor, color, fontFamily }) => {
   return (
     <div className={style.rightCornerLargeRibbon}>
       <svg height="84" width="84">
@@ -65,10 +66,12 @@ RightCornerLargeRibbon.propTypes = {
 };
 
 RightCornerLargeRibbon.defaultProps = {
-  fontFamily: "Arial"
+  fontFamily: "sans",
+  backgroundColor: "#cc0000",
+  color: "#ccffff",
 };
 
-export const LeftCornerRibbon = ({ children, backgroundColor, color, fontFamily }) => {
+const LeftCornerRibbon = ({ children, backgroundColor, color, fontFamily }) => {
   return (
     <div className={style.leftCornerRibbon}>
       <svg height="70" width="70">
@@ -91,10 +94,12 @@ LeftCornerRibbon.propTypes = {
 };
 
 LeftCornerRibbon.defaultProps = {
-  fontFamily: "Arial"
+  fontFamily: "sans",
+  backgroundColor: "#cc0000",
+  color: "#ccffff",
 };
 
-export const LeftCornerLargeRibbon = ({ children, backgroundColor, color, fontFamily }) => {
+const LeftCornerLargeRibbon = ({ children, backgroundColor, color, fontFamily }) => {
   return (
     <div className={style.leftCornerLargeRibbon}>
       <svg height="84" width="84">
@@ -117,10 +122,12 @@ LeftCornerLargeRibbon.propTypes = {
 };
 
 LeftCornerLargeRibbon.defaultProps = {
-  fontFamily: "Arial"
+  fontFamily: "sans",
+  backgroundColor: "#cc0000",
+  color: "#ccffff",
 };
 
-export const RightRibbon = ({ children, backgroundColor, color, fontFamily }) => {
+const RightRibbon = ({ children, backgroundColor, color, fontFamily }) => {
   return (
     <div className={style.rightRibbon}>
       <svg height="40" width="70">
@@ -140,10 +147,12 @@ RightRibbon.propTypes = {
 };
 
 RightRibbon.defaultProps = {
-  fontFamily: "Arial"
+  fontFamily: "sans",
+  backgroundColor: "#cc0000",
+  color: "#ccffff",
 };
 
-export const RightLargeRibbon = ({ children, backgroundColor, color, fontFamily }) => {
+const RightLargeRibbon = ({ children, backgroundColor, color, fontFamily }) => {
   return (
     <div className={style.rightLargeRibbon}>
       <svg height="60" width="90">
@@ -163,10 +172,12 @@ RightLargeRibbon.propTypes = {
 };
 
 RightLargeRibbon.defaultProps = {
-  fontFamily: "Arial"
+  fontFamily: "sans",
+  backgroundColor: "#cc0000",
+  color: "#ccffff",
 };
 
-export const LeftRibbon = ({ children, backgroundColor, color, fontFamily }) => {
+const LeftRibbon = ({ children, backgroundColor, color, fontFamily }) => {
   return (
     <div className={style.leftRibbon}>
       <svg height="40" width="70">
@@ -188,10 +199,12 @@ LeftRibbon.propTypes = {
 };
 
 LeftRibbon.defaultProps = {
-  fontFamily: "Arial"
+  fontFamily: "sans",
+  backgroundColor: "#cc0000",
+  color: "#ccffff",
 };
 
-export const LeftLargeRibbon = ({ children, backgroundColor, color, fontFamily }) => {
+const LeftLargeRibbon = ({ children, backgroundColor, color, fontFamily }) => {
   return (
     <div className={style.leftLargeRibbon}>
       <svg height="60" width="90">
@@ -213,5 +226,25 @@ LeftLargeRibbon.propTypes = {
 };
 
 LeftLargeRibbon.defaultProps = {
-  fontFamily: "Arial"
+  fontFamily: "sans",
+  backgroundColor: "#cc0000",
+  color: "#ccffff",
+};
+
+export const Ribbon = ({ side = "right", type = "corner", size = "normal", ...props }) => {
+  if(side === "right" && type === "edge" && size === "normal") return <RightRibbon {...props} />
+  if(side === "right" && type === "edge" && size === "large") return <RightLargeRibbon {...props} />
+  if(side === "right" && type === "corner" && size === "normal") return <RightCornerRibbon {...props} />
+  if(side === "right" && type === "corner" && size === "large") return <RightCornerLargeRibbon {...props} />
+  if(side === "left" && type === "edge" && size === "normal") return <LeftRibbon {...props} />
+  if(side === "left" && type === "edge" && size === "large") return <LeftLargeRibbon {...props} />
+  if(side === "left" && type === "corner" && size === "normal") return <LeftCornerRibbon {...props} />
+  if(side === "left" && type === "corner" && size === "large") return <LeftCornerLargeRibbon {...props} />
+  return <></>
+};
+
+Ribbon.propTypes = {
+  side: PropTypes.oneOf(["right", "left"]),
+  type: PropTypes.oneOf(["edge", "corner"]),
+  size: PropTypes.oneOf(["normal", "large"]),
 };

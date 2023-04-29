@@ -1,6 +1,6 @@
 {
   "name": "react-ribbons",
-  "version": "1.0.6",
+  "version": "1.1.1",
   "description": "A list of ribbons components for React",
   "main": "./index.js",
   "typings": "./index.d.ts",
@@ -29,25 +29,25 @@
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
-    "react": "^>= 16 <= 17",
-    "react-dom": ">= 16 <= 17"
+    "react": "^>= 16 <= 18",
+    "react-dom": ">= 16 <= 18"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.0",
-    "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1",
-    "@babel/preset-react": "^7.7.0",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.2.0",
-    "eslint": "^6.6.0",
-    "eslint-plugin-react": "^7.16.0",
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.21.5",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "eslint": "^8.39.0",
+    "eslint-plugin-react": "^7.32.2",
     "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "sass": "^1.50.0",
-    "sass-loader": "^8.0.0",
-    "style-loader": "^1.0.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.2.2",
+    "style-loader": "^3.3.2",
+    "webpack": "^5.81.0",
+    "webpack-cli": "^5.0.2"
   }
 }
