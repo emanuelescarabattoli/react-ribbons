@@ -1,12 +1,14 @@
 .ribbonContainer {
     position: relative;
     min-height: 100px;
+    overflow: hidden;
 }
 
 .rightCornerRibbon {
     position: absolute;
     top: -10px;
     right: -10px;
+    pointer-events: none;
 }
 
 .rightCornerRibbonText {
@@ -26,6 +28,7 @@
     position: absolute;
     top: -12px;
     right: -12px;
+    pointer-events: none;
 }
 
 .rightCornerLargeRibbonText {
@@ -45,6 +48,7 @@
     position: absolute;
     top: -10px;
     left: -10px;
+    pointer-events: none;
 }
 
 .leftCornerRibbonText {
@@ -64,6 +68,7 @@
     position: absolute;
     top: -12px;
     left: -12px;
+    pointer-events: none;
 }
 
 .leftCornerLargeRibbonText {
@@ -83,6 +88,7 @@
     position: absolute;
     top: 0;
     right: -10px;
+    pointer-events: none;
 }
 
 .rightRibbonText {
@@ -96,6 +102,7 @@
     position: absolute;
     top: 0;
     right: -15px;
+    pointer-events: none;
 }
 
 .rightLargeRibbonText {
@@ -109,6 +116,7 @@
     position: absolute;
     top: 0;
     left: -10px;
+    pointer-events: none;
 }
 
 .leftRibbonText {
@@ -122,6 +130,7 @@
     position: absolute;
     top: 0;
     left: -15px;
+    pointer-events: none;
 }
 
 .leftLargeRibbonText {
