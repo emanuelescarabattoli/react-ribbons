@@ -2,13 +2,13 @@
 
 ![React Ribbons](https://emanuelescarabattoli.github.io/react-ribbons/favicon-150.png)
 
-A React NPM package with a lot of fancy and easy to use ribbons components.
+A React library with a lot of fancy and easy-to-use ribbon components.
 
 [Documentation](https://emanuelescarabattoli.github.io/react-ribbons/index.html)
 
 ## Installation
 
-To install the package tou can use NPM or Yarn and run the following command
+To install the package you can use NPM or Yarn and run the following command:
 
 ```
 // NPM setup
@@ -20,7 +20,7 @@ yarn add react-ribbons
 
 ## Example usage
 
-```
+```js
 import { RibbonContainer,  Right } from "react-ribbons";
 
 const MyComponent = () => (
