@@ -1,6 +1,6 @@
 {
   "name": "react-ribbons",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A list of ribbons components for React",
   "main": "./index.js",
   "typings": "./index.d.ts",
