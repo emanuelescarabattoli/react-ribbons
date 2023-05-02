@@ -1,14 +1,27 @@
-# React Ribbons
+<div align="center">
+  <p>
+    <img src="docs/favicon-310.png" alt="extension logo" width="200" />
+  </p>
+  <h1>React Ribbons</h1>
+  <p>A React library with a lot of fancy and easy-to-use ribbon components</p>
+  <p>
+    <a href="https://www.npmjs.com/package/react-ribbons">
+      <img src="https://img.shields.io/npm/v/react-ribbons.svg?maxAge=3600" alt="NPM version" />
+    </a>
+    <a href="https://www.npmjs.com/package/react-ribbons">
+      <img src="https://img.shields.io/npm/dt/react-ribbons.svg?maxAge=3600" alt="NPM downloads" />
+    </a>
+  </p>
 
-![React Ribbons](https://emanuelescarabattoli.github.io/react-ribbons/favicon-150.png)
+  <p>
+    <a href="https://emanuelescarabattoli.github.io/react-ribbons/index.html">Documentation</a>
+  </p>
+</div>
 
-A React NPM package with a lot of fancy and easy to use ribbons components.
-
-[Documentation](https://emanuelescarabattoli.github.io/react-ribbons/index.html)
 
 ## Installation
 
-To install the package tou can use NPM or Yarn and run the following command
+To install the package you can use NPM or Yarn and run the following command:
 
 ```
 // NPM setup
@@ -20,7 +33,7 @@ yarn add react-ribbons
 
 ## Example usage
 
-```
+```js
 import { RibbonContainer,  Right } from "react-ribbons";
 
 const MyComponent = () => (
