@@ -19,13 +19,13 @@ RibbonContainer.defaultProps = {
   className: undefined
 };
 
-const RightCornerRibbon = ({ children, backgroundColor, color, fontFamily }) => {
+const RightCornerRibbon = ({ children, backgroundColor, color, fontFamily, isBordered }) => {
   return (
-    <div className={style.rightCornerRibbon}>
+    <div className={style.rightCornerRibbon} style={isBordered ? { top: "-10px", right: "-10px" } : { top: "0", right: "0" }}>
       <svg height="70" width="70">
-        <polygon points="0 0, 0 10, 10 10" fill={`${backgroundColor}77`} strokeWidth="0" />
+        {isBordered ? <polygon points="0 0, 0 10, 10 10" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
         <polygon points="0 0, 70 70, 70 40, 30 0" fill={backgroundColor} strokeWidth="0" />
-        <polygon points="60 60, 60 70, 70 70" fill={`${backgroundColor}77`} strokeWidth="0" />
+        {isBordered ? <polygon points="60 60, 60 70, 70 70" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
       </svg>
       <span style={{ color, fontFamily }} className={style.rightCornerRibbonText}>{children}</span>
     </div>
@@ -36,13 +36,15 @@ RightCornerRibbon.propTypes = {
   children: PropTypes.any.isRequired,
   backgroundColor: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string
+  fontFamily: PropTypes.string,
+  isBordered: PropTypes.bool.isRequired,
 };
 
 RightCornerRibbon.defaultProps = {
   fontFamily: "sans",
   backgroundColor: "#cc0000",
   color: "#ccffff",
+  isBordered: true,
 };
 
 const RightCornerLargeRibbon = ({ children, backgroundColor, color, fontFamily }) => {
@@ -62,7 +64,7 @@ RightCornerLargeRibbon.propTypes = {
   children: PropTypes.any.isRequired,
   backgroundColor: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string
+  fontFamily: PropTypes.string,
 };
 
 RightCornerLargeRibbon.defaultProps = {
@@ -90,7 +92,7 @@ LeftCornerRibbon.propTypes = {
   children: PropTypes.any.isRequired,
   backgroundColor: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string
+  fontFamily: PropTypes.string,
 };
 
 LeftCornerRibbon.defaultProps = {
@@ -118,7 +120,7 @@ LeftCornerLargeRibbon.propTypes = {
   children: PropTypes.any.isRequired,
   backgroundColor: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string
+  fontFamily: PropTypes.string,
 };
 
 LeftCornerLargeRibbon.defaultProps = {
@@ -143,7 +145,7 @@ RightRibbon.propTypes = {
   children: PropTypes.any.isRequired,
   backgroundColor: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string
+  fontFamily: PropTypes.string,
 };
 
 RightRibbon.defaultProps = {
@@ -168,7 +170,7 @@ RightLargeRibbon.propTypes = {
   children: PropTypes.any.isRequired,
   backgroundColor: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string
+  fontFamily: PropTypes.string,
 };
 
 RightLargeRibbon.defaultProps = {
@@ -195,7 +197,7 @@ LeftRibbon.propTypes = {
   children: PropTypes.any.isRequired,
   backgroundColor: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string
+  fontFamily: PropTypes.string,
 };
 
 LeftRibbon.defaultProps = {
@@ -222,7 +224,7 @@ LeftLargeRibbon.propTypes = {
   children: PropTypes.any.isRequired,
   backgroundColor: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string
+  fontFamily: PropTypes.string,
 };
 
 LeftLargeRibbon.defaultProps = {
@@ -232,15 +234,15 @@ LeftLargeRibbon.defaultProps = {
 };
 
 export const Ribbon = ({ side = "right", type = "corner", size = "normal", ...props }) => {
-  if(side === "right" && type === "edge" && size === "normal") return <RightRibbon {...props} />
-  if(side === "right" && type === "edge" && size === "large") return <RightLargeRibbon {...props} />
-  if(side === "right" && type === "corner" && size === "normal") return <RightCornerRibbon {...props} />
-  if(side === "right" && type === "corner" && size === "large") return <RightCornerLargeRibbon {...props} />
-  if(side === "left" && type === "edge" && size === "normal") return <LeftRibbon {...props} />
-  if(side === "left" && type === "edge" && size === "large") return <LeftLargeRibbon {...props} />
-  if(side === "left" && type === "corner" && size === "normal") return <LeftCornerRibbon {...props} />
-  if(side === "left" && type === "corner" && size === "large") return <LeftCornerLargeRibbon {...props} />
-  return <></>
+  if (side === "right" && type === "edge" && size === "normal") return <RightRibbon {...props} />;
+  if (side === "right" && type === "edge" && size === "large") return <RightLargeRibbon {...props} />;
+  if (side === "right" && type === "corner" && size === "normal") return <RightCornerRibbon {...props} />;
+  if (side === "right" && type === "corner" && size === "large") return <RightCornerLargeRibbon {...props} />;
+  if (side === "left" && type === "edge" && size === "normal") return <LeftRibbon {...props} />;
+  if (side === "left" && type === "edge" && size === "large") return <LeftLargeRibbon {...props} />;
+  if (side === "left" && type === "corner" && size === "normal") return <LeftCornerRibbon {...props} />;
+  if (side === "left" && type === "corner" && size === "large") return <LeftCornerLargeRibbon {...props} />;
+  return <></>;
 };
 
 Ribbon.propTypes = {

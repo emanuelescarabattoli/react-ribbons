@@ -24,6 +24,9 @@
 To install the package you can use NPM or Yarn and run the following command:
 
 ```
+// Enter project folder
+cd package
+
 // NPM setup
 npm install react-ribbons
 

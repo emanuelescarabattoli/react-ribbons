@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e8e8e8;
+  font-family: "Open Sans";
+  color: #222222;
+}
+
+:not(pre)>code[class*="language-"],
+pre[class*="language-"] {
+  background: transparent;
+}
+
+pre[class*="language-"] {
+  padding: 0em;
+  margin: 0;
+  overflow: auto;
+  font-size: 0.85em;
+}
+
+.demo {
+  padding: 2rem;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px -5px #00000088;
+  border: solid 1px #dddddd;
+}
+
+.code {
+  display: block;
+  background-color: #222222;
+  padding: 1rem;
+  border-radius: 5px;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.header {
+  background: repeating-linear-gradient(45deg,
+      #222222,
+      #222222 20px,
+      #292929 20px,
+      #292929 40px);
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.headerContent {
+  color: #f8f8f8;
+  display: flex;
+}
+
+.logo {
+  height: 200px;
+}
+
+.logo img {
+  height: 100%;
+}
+
+.title {
+  padding: 0 3rem;
+}
+
+.title h1 {
+  margin: 0;
+  padding: 2rem 0 0.5rem 0;
+  text-transform: capitalize;
+}
+
+.title p {
+  margin: 0;
+  padding: 0;
+  width: 400px;
+  font-size: 1.1em;
+  opacity: 0.8;
+}
+
+.title a {
+  margin-top: 1rem;
+  padding-bottom: 0.2rem;
+  color: #ffa732;
+  font-weight: 600;
+  font-size: 1.1em;
+  text-decoration: none;
+  display: inline-block;
+  border-bottom: dotted 1px #ffa732;
+}
+
+.content {
+  margin: 0 auto;
+  padding: 2rem 4rem;
+}
+
+.sectionTitle {
+  margin: 2rem 0;
+}
+
+.sectionTitle h2 {
+  margin: 0;
+  padding: 0rem 0 0.2rem 0;
+  text-transform: capitalize;
+}
+
+.sectionTitle p {
+  margin: 0;
+  padding: 0;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-column-gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 1366px) {
+  .header {
+    height: auto;
+  }
+
+  .headerContent {
+    color: #f8f8f8;
+    display: block;
+  }
+
+  .title {
+    padding: 0;
+  }
+
+  .title p {
+    width: auto;
+  }
+
+  .content {
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .columns {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    margin-bottom: 4rem;
+    width: 95%;
+  }
+}

@@ -1,9 +1,9 @@
 .vscode
-/node_modules
-.babelrc
-.eslintrc.json
+/package/node_modules
+/package/.babelrc
+/package/.eslintrc.json
 .gitignore
-ReactRibbons.js
-webpack.config.js
-yarn.lock
+/package/ReactRibbons.js
+/package/webpack.config.js
+/package/yarn.lock
 /docs
