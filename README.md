@@ -41,7 +41,15 @@ import { RibbonContainer,  Right } from "react-ribbons";
 
 const MyComponent = () => (
   <RibbonContainer className={style.demo}>
-    <Ribbon side="right" type="edge" size="normal" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
+    <Ribbon
+      side="right"
+      type="edge"
+      size="normal"
+      backgroundColor="#cc0000"
+      color="#ccffff"
+      fontFamily="sans"
+      withStripes
+    >
       Foo bar
     </Ribbon>
     <p>

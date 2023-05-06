@@ -2,6 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 import style from "./ReactRibbons.scss";
 
+const commonPropTypes = {
+  children: PropTypes.any.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  fontFamily: PropTypes.string,
+  withStripes: PropTypes.bool.isRequired,
+};
+
+const commonDefaultProps = {
+  fontFamily: "sans",
+  backgroundColor: "#cc0000",
+  color: "#ccffff",
+  withStripes: true,
+};
+
 export const RibbonContainer = ({ children, className }) => {
   return (
     <div className={`${style.ribbonContainer} ${className || ""}`}>
@@ -19,68 +34,46 @@ RibbonContainer.defaultProps = {
   className: undefined
 };
 
-const RightCornerRibbon = ({ children, backgroundColor, color, fontFamily, isBordered }) => {
+const RightCornerRibbon = ({ children, backgroundColor, color, fontFamily, withStripes }) => {
   return (
-    <div className={style.rightCornerRibbon} style={isBordered ? { top: "-10px", right: "-10px" } : { top: "0", right: "0" }}>
+    <div className={style.rightCornerRibbon} style={withStripes ? { top: "-10px", right: "-10px" } : { top: "0", right: "0" }}>
       <svg height="70" width="70">
-        {isBordered ? <polygon points="0 0, 0 10, 10 10" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
+        {withStripes ? <polygon points="0 0, 0 10, 10 10" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
         <polygon points="0 0, 70 70, 70 40, 30 0" fill={backgroundColor} strokeWidth="0" />
-        {isBordered ? <polygon points="60 60, 60 70, 70 70" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
+        {withStripes ? <polygon points="60 60, 60 70, 70 70" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
       </svg>
       <span style={{ color, fontFamily }} className={style.rightCornerRibbonText}>{children}</span>
     </div>
   );
 };
 
-RightCornerRibbon.propTypes = {
-  children: PropTypes.any.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string,
-  isBordered: PropTypes.bool.isRequired,
-};
+RightCornerRibbon.propTypes = commonPropTypes;
+RightCornerRibbon.defaultProps = commonDefaultProps;
 
-RightCornerRibbon.defaultProps = {
-  fontFamily: "sans",
-  backgroundColor: "#cc0000",
-  color: "#ccffff",
-  isBordered: true,
-};
-
-const RightCornerLargeRibbon = ({ children, backgroundColor, color, fontFamily }) => {
+const RightCornerLargeRibbon = ({ children, backgroundColor, color, fontFamily, withStripes }) => {
   return (
-    <div className={style.rightCornerLargeRibbon}>
+    <div className={style.rightCornerLargeRibbon} style={withStripes ? { top: "-12px", right: "-12px" } : { top: "0", right: "0" }}>
       <svg height="84" width="84">
-        <polygon points="0 0, 0 12, 12 12" fill={`${backgroundColor}77`} strokeWidth="0" />
+        {withStripes ? <polygon points="0 0, 0 12, 12 12" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
         <polygon points="0 0, 84 84, 84 48, 36 0" fill={backgroundColor} strokeWidth="0" />
-        <polygon points="72 72, 72 84, 84 84" fill={`${backgroundColor}77`} strokeWidth="0" />
+        {withStripes ? <polygon points="72 72, 72 84, 84 84" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
       </svg>
       <span style={{ color, fontFamily }} className={style.rightCornerLargeRibbonText}>{children}</span>
     </div>
   );
 };
 
-RightCornerLargeRibbon.propTypes = {
-  children: PropTypes.any.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string,
-};
+RightCornerLargeRibbon.propTypes = commonPropTypes;
+RightCornerLargeRibbon.defaultProps = commonDefaultProps;
 
-RightCornerLargeRibbon.defaultProps = {
-  fontFamily: "sans",
-  backgroundColor: "#cc0000",
-  color: "#ccffff",
-};
-
-const LeftCornerRibbon = ({ children, backgroundColor, color, fontFamily }) => {
+const LeftCornerRibbon = ({ children, backgroundColor, color, fontFamily, withStripes }) => {
   return (
-    <div className={style.leftCornerRibbon}>
+    <div className={style.leftCornerRibbon} style={withStripes ? { top: "-10px", left: "-10px" } : { top: "0", right: "0" }}>
       <svg height="70" width="70">
         <g transform="rotate(-90, 35, 35)">
-          <polygon points="0 0, 0 10, 10 10" fill={`${backgroundColor}77`} strokeWidth="0" />
+          {withStripes ? <polygon points="0 0, 0 10, 10 10" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
           <polygon points="0 0, 70 70, 70 40, 30 0" fill={backgroundColor} strokeWidth="0" />
-          <polygon points="60 60, 60 70, 70 70" fill={`${backgroundColor}77`} strokeWidth="0" />
+          {withStripes ? <polygon points="60 60, 60 70, 70 70" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
         </g>
       </svg>
       <span style={{ color, fontFamily }} className={style.leftCornerRibbonText}>{children}</span>
@@ -88,27 +81,17 @@ const LeftCornerRibbon = ({ children, backgroundColor, color, fontFamily }) => {
   );
 };
 
-LeftCornerRibbon.propTypes = {
-  children: PropTypes.any.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string,
-};
+LeftCornerRibbon.propTypes = commonPropTypes;
+LeftCornerRibbon.defaultProps = commonDefaultProps;
 
-LeftCornerRibbon.defaultProps = {
-  fontFamily: "sans",
-  backgroundColor: "#cc0000",
-  color: "#ccffff",
-};
-
-const LeftCornerLargeRibbon = ({ children, backgroundColor, color, fontFamily }) => {
+const LeftCornerLargeRibbon = ({ children, backgroundColor, color, fontFamily, withStripes }) => {
   return (
-    <div className={style.leftCornerLargeRibbon}>
+    <div className={style.leftCornerLargeRibbon} style={withStripes ? { top: "-12px", left: "-12px" } : { top: "0", right: "0" }}>
       <svg height="84" width="84">
         <g transform="rotate(-90, 42, 42)">
-          <polygon points="0 0, 0 12, 12 12" fill={`${backgroundColor}77`} strokeWidth="0" />
+          {withStripes ? <polygon points="0 0, 0 12, 12 12" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
           <polygon points="0 0, 84 84, 84 48, 36 0" fill={backgroundColor} strokeWidth="0" />
-          <polygon points="72 72, 72 84, 84 84" fill={`${backgroundColor}77`} strokeWidth="0" />
+          {withStripes ? <polygon points="72 72, 72 84, 84 84" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
         </g>
       </svg>
       <span style={{ color, fontFamily }} className={style.leftCornerLargeRibbonText}>{children}</span>
@@ -116,24 +99,14 @@ const LeftCornerLargeRibbon = ({ children, backgroundColor, color, fontFamily })
   );
 };
 
-LeftCornerLargeRibbon.propTypes = {
-  children: PropTypes.any.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string,
-};
+LeftCornerLargeRibbon.propTypes = commonPropTypes;
+LeftCornerLargeRibbon.defaultProps = commonDefaultProps;
 
-LeftCornerLargeRibbon.defaultProps = {
-  fontFamily: "sans",
-  backgroundColor: "#cc0000",
-  color: "#ccffff",
-};
-
-const RightRibbon = ({ children, backgroundColor, color, fontFamily }) => {
+const RightRibbon = ({ children, backgroundColor, color, fontFamily, withStripes }) => {
   return (
-    <div className={style.rightRibbon}>
+    <div className={style.rightRibbon} style={withStripes ? { top: "-0", right: "-10px" } : { top: "0", right: "0" }}>
       <svg height="40" width="70">
-        <polygon points="0 10, 10 20, 0 30, 70 30, 70 10" fill={backgroundColor} strokeWidth="0" />
+        {withStripes ? <polygon points="0 10, 10 20, 0 30, 70 30, 70 10" fill={backgroundColor} strokeWidth="0" /> : <></>}
         <polygon points="60 40, 60 30, 70 30" fill={`${backgroundColor}77`} strokeWidth="0" />
       </svg>
       <span style={{ color, fontFamily }} className={style.rightRibbonText}>{children}</span>
@@ -141,24 +114,14 @@ const RightRibbon = ({ children, backgroundColor, color, fontFamily }) => {
   );
 };
 
-RightRibbon.propTypes = {
-  children: PropTypes.any.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string,
-};
+RightRibbon.propTypes = commonPropTypes;
+RightRibbon.defaultProps = commonDefaultProps;
 
-RightRibbon.defaultProps = {
-  fontFamily: "sans",
-  backgroundColor: "#cc0000",
-  color: "#ccffff",
-};
-
-const RightLargeRibbon = ({ children, backgroundColor, color, fontFamily }) => {
+const RightLargeRibbon = ({ children, backgroundColor, color, fontFamily, withStripes }) => {
   return (
-    <div className={style.rightLargeRibbon}>
+    <div className={style.rightLargeRibbon} style={withStripes ? { top: "0", right: "-12px" } : { top: "0", right: "0" }}>
       <svg height="60" width="90">
-        <polygon points="0 15, 15 30, 0 45, 90 45, 90 15" fill={backgroundColor} strokeWidth="0" />
+        {withStripes ? <polygon points="0 15, 15 30, 0 45, 90 45, 90 15" fill={backgroundColor} strokeWidth="0" /> : <></>}
         <polygon points="75 60, 75 40, 90 45" fill={`${backgroundColor}77`} strokeWidth="0" />
       </svg>
       <span style={{ color, fontFamily }} className={style.rightLargeRibbonText}>{children}</span>
@@ -166,25 +129,15 @@ const RightLargeRibbon = ({ children, backgroundColor, color, fontFamily }) => {
   );
 };
 
-RightLargeRibbon.propTypes = {
-  children: PropTypes.any.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string,
-};
+RightLargeRibbon.propTypes = commonPropTypes;
+RightLargeRibbon.defaultProps = commonDefaultProps;
 
-RightLargeRibbon.defaultProps = {
-  fontFamily: "sans",
-  backgroundColor: "#cc0000",
-  color: "#ccffff",
-};
-
-const LeftRibbon = ({ children, backgroundColor, color, fontFamily }) => {
+const LeftRibbon = ({ children, backgroundColor, color, fontFamily, withStripes }) => {
   return (
-    <div className={style.leftRibbon}>
+    <div className={style.leftRibbon} style={withStripes ? { top: "-0", left: "-10px" } : { top: "0", right: "0" }}>
       <svg height="40" width="70">
         <g transform="scale(-1,1) translate(-70, 0)">
-          <polygon points="0 10, 10 20, 0 30, 70 30, 70 10" fill={backgroundColor} strokeWidth="0" />
+          {withStripes ? <polygon points="0 10, 10 20, 0 30, 70 30, 70 10" fill={backgroundColor} strokeWidth="0" /> : <></>}
           <polygon points="60 40, 60 30, 70 30" fill={`${backgroundColor}77`} strokeWidth="0" />
         </g>
       </svg>
@@ -193,25 +146,15 @@ const LeftRibbon = ({ children, backgroundColor, color, fontFamily }) => {
   );
 };
 
-LeftRibbon.propTypes = {
-  children: PropTypes.any.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string,
-};
+LeftRibbon.propTypes = commonPropTypes;
+LeftRibbon.defaultProps = commonDefaultProps;
 
-LeftRibbon.defaultProps = {
-  fontFamily: "sans",
-  backgroundColor: "#cc0000",
-  color: "#ccffff",
-};
-
-const LeftLargeRibbon = ({ children, backgroundColor, color, fontFamily }) => {
+const LeftLargeRibbon = ({ children, backgroundColor, color, fontFamily, withStripes }) => {
   return (
-    <div className={style.leftLargeRibbon}>
+    <div className={style.leftLargeRibbon} style={withStripes ? { top: "-0", left: "-12px" } : { top: "0", right: "0" }}>
       <svg height="60" width="90">
         <g transform="scale(-1,1) translate(-90, 0)">
-          <polygon points="0 15, 15 30, 0 45, 90 45, 90 15" fill={backgroundColor} strokeWidth="0" />
+          {withStripes ? <polygon points="0 15, 15 30, 0 45, 90 45, 90 15" fill={backgroundColor} strokeWidth="0" /> : <></>}
           <polygon points="75 60, 75 40, 90 45" fill={`${backgroundColor}77`} strokeWidth="0" />
         </g>
       </svg>
@@ -220,18 +163,8 @@ const LeftLargeRibbon = ({ children, backgroundColor, color, fontFamily }) => {
   );
 };
 
-LeftLargeRibbon.propTypes = {
-  children: PropTypes.any.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string,
-};
-
-LeftLargeRibbon.defaultProps = {
-  fontFamily: "sans",
-  backgroundColor: "#cc0000",
-  color: "#ccffff",
-};
+LeftLargeRibbon.propTypes = commonPropTypes;
+LeftLargeRibbon.defaultProps = commonDefaultProps;
 
 export const Ribbon = ({ side = "right", type = "corner", size = "normal", ...props }) => {
   if (side === "right" && type === "edge" && size === "normal") return <RightRibbon {...props} />;

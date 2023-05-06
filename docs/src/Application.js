@@ -1,12 +1,49 @@
 import "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
-import React from "react";
+import React, { useState } from "react";
 import PrismCode from "react-prism";
 import logo from "./assets/img/rr_512.png";
 import style from "./Application.scss";
 import { RibbonContainer, Ribbon } from "react-ribbons";
 
 const Application = () => {
+  const [side, setSide] = useState("left");
+  const [type, setType] = useState("corner");
+  const [size, setSize] = useState("large");
+  const [backgroundColor, setBackgroundColor] = useState("#cc0000");
+  const [color, setColor] = useState("#ccffff");
+  const [fontFamily, setFontFamily] = useState("sans");
+  const [withStripes, setWithStripes] = useState(true);
+
+  const onChangeSide = value => {
+    setSide(value);
+  };
+
+  const onChangeType = value => {
+    setType(value);
+  };
+
+  const onChangeSize = value => {
+    setSize(value);
+  };
+
+  const onChangeBackgroundColor = value => {
+    setBackgroundColor(value);
+  };
+
+  const onChangeColor = value => {
+    setColor(value);
+  };
+
+  const onChangeFontFamily = value => {
+    setFontFamily(value);
+  };
+
+  const onChangeWithStripes = value => {
+    setWithStripes(value);
+  };
+
+
   return (
     <>
       <header className={style.header}>
@@ -55,243 +92,77 @@ yarn add react-ribbons
 
         </div>
         <div className={style.sectionTitle}>
-          <h2>Examples</h2>
+          <h2>Available properties</h2>
           <p>
-            Here you can find examples on how to use the package
+            Here all the available properties you can use
+          </p>
+          <table className={style.propertiesTable}>
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Description</th>
+                <th>Values</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>side</code></td>
+                <td>Where the ribbon will be displayed</td>
+                <td><code>left</code><code>right</code></td>
+              </tr>
+              <tr>
+                <td><code>type</code></td>
+                <td>Position of the ribbon</td>
+                <td><code>corner</code><code>edge</code></td>
+              </tr>
+              <tr>
+                <td><code>size</code></td>
+                <td>Size of the ribbon</td>
+                <td><code>normal</code><code>large</code></td>
+              </tr>
+              <tr>
+                <td><code>backgroundColor</code></td>
+                <td>Background color</td>
+                <td>eg. <code>#cc0000</code></td>
+              </tr>
+              <tr>
+                <td><code>color</code></td>
+                <td>Text color</td>
+                <td>eg. <code>#ccffff</code></td>
+              </tr>
+              <tr>
+                <td><code>fontFamily</code></td>
+                <td>Text font family</td>
+                <td>eg. <code>sans</code></td>
+              </tr>
+              <tr>
+                <td><code>withStripes</code></td>
+                <td>Decides if stripes are displayed</td>
+                <td>eg. <code>true</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className={style.sectionTitle}>
+          <h2>Demo</h2>
+          <p>
+            Here you can find a demo on how to use the package
           </p>
         </div>
         <div className={style.columns}>
           <div className={style.code}>
             <PrismCode component="pre" className="language-html">
               {`
-  <RibbonContainer className={style.demo}>
-    <Ribbon>
-        Foo bar
-    </Ribbon>
-    <b>These are the default values, check the code</b>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-  </RibbonContainer>
-              `}
-            </PrismCode>
-          </div>
-          <div>
-            <RibbonContainer className={style.demo}>
-              <Ribbon isBordered={false}>
-                Foo bar1
-              </Ribbon>
-              <b>These are the default values, check the code</b>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </RibbonContainer>
-          </div>
-        </div>
-        <div className={style.columns}>
-          <div className={style.code}>
-            <PrismCode component="pre" className="language-html">
-              {`
-  <RibbonContainer className={style.demo}>
-    <Ribbon side="right" type="edge" size="large" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
-        Foo bar
-    </Ribbon>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-  </RibbonContainer>
-              `}
-            </PrismCode>
-          </div>
-          <div>
-            <RibbonContainer className={style.demo}>
-              <Ribbon side="right" type="edge" size="normal" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
-                Foo bar
-              </Ribbon>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </RibbonContainer>
-          </div>
-        </div>
-        <div className={style.columns}>
-          <div className={style.code}>
-            <PrismCode component="pre" className="language-html">
-              {`
-  <RibbonContainer className={style.demo}>
-    <Ribbon side="right" type="edge" size="large" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
-        Foo bar
-    </Ribbon>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-  </RibbonContainer>
-              `}
-            </PrismCode>
-          </div>
-          <div>
-            <RibbonContainer className={style.demo}>
-              <Ribbon side="right" type="edge" size="large" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
-                Foo bar
-              </Ribbon>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </RibbonContainer>
-          </div>
-        </div>
-        <div className={style.columns}>
-          <div className={style.code}>
-            <PrismCode component="pre" className="language-html">
-              {`
-  <RibbonContainer className={style.demo}>
-    <Ribbon side="right" type="corner" size="normal" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
-        Foo bar
-    </Ribbon>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-  </RibbonContainer>
-              `}
-            </PrismCode>
-          </div>
-          <div>
-            <RibbonContainer className={style.demo}>
-              <Ribbon side="right" type="corner" size="normal" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
-                Foo bar
-              </Ribbon>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </RibbonContainer>
-          </div>
-        </div>
-        <div className={style.columns}>
-          <div className={style.code}>
-            <PrismCode component="pre" className="language-html">
-              {`
-  <RibbonContainer className={style.demo}>
-    <Ribbon side="right" type="corner" size="large" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
-        Foo bar
-    </Ribbon>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-  </RibbonContainer>
-              `}
-            </PrismCode>
-          </div>
-          <div>
-            <RibbonContainer className={style.demo}>
-              <Ribbon side="right" type="corner" size="large" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
-                Foo bar
-              </Ribbon>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </RibbonContainer>
-          </div>
-        </div>
-        <div className={style.columns}>
-          <div className={style.code}>
-            <PrismCode component="pre" className="language-html">
-              {`
-  <RibbonContainer className={style.demo}>
-    <Ribbon side="left" type="edge" size="normal" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
-        Foo bar
-    </Ribbon>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-  </RibbonContainer>
-              `}
-            </PrismCode>
-          </div>
-          <div>
-            <RibbonContainer className={style.demo}>
-              <Ribbon side="left" type="edge" size="normal" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
-                Foo bar
-              </Ribbon>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </RibbonContainer>
-          </div>
-        </div>
-        <div className={style.columns}>
-          <div className={style.code}>
-            <PrismCode component="pre" className="language-html">
-              {`
-  <RibbonContainer className={style.demo}>
-    <Ribbon side="left" type="edge" size="large" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
-        Foo bar
-    </Ribbon>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-  </RibbonContainer>
-              `}
-            </PrismCode>
-          </div>
-          <div>
-            <RibbonContainer className={style.demo}>
-              <Ribbon side="left" type="edge" size="large" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
-                Foo bar
-              </Ribbon>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </RibbonContainer>
-          </div>
-        </div>
-        <div className={style.columns}>
-          <div className={style.code}>
-            <PrismCode component="pre" className="language-html">
-              {`
-  <RibbonContainer className={style.demo}>
-    <Ribbon side="left" type="corner" size="normal" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
-        Foo bar
-    </Ribbon>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-  </RibbonContainer>
-              `}
-            </PrismCode>
-          </div>
-          <div>
-            <RibbonContainer className={style.demo}>
-              <Ribbon side="left" type="corner" size="normal" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
-                Foo bar
-              </Ribbon>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </RibbonContainer>
-          </div>
-        </div>
-        <div className={style.columns}>
-          <div className={style.code}>
-            <PrismCode component="pre" className="language-html">
-              {`
 <RibbonContainer className={style.demo}>
-  <Ribbon side="left" type="corner" size="large" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
+  <Ribbon
+    side="left"
+    type="corner"
+    size="large"
+    backgroundColor="#cc0000"
+    color="#ccffff"
+    fontFamily="sans"
+    withStripes
+  >
     Foo bar
   </Ribbon>
   <p>
@@ -304,7 +175,15 @@ yarn add react-ribbons
           </div>
           <div>
             <RibbonContainer className={style.demo}>
-              <Ribbon side="left" type="corner" size="large" backgroundColor="#cc0000" color="#ccffff" fontFamily="sans">
+              <Ribbon
+                side={side}
+                type={type}
+                size={size}
+                backgroundColor={backgroundColor}
+                color={color}
+                fontFamily={fontFamily}
+                withStripes={withStripes}
+              >
                 Foo bar
               </Ribbon>
               <p>

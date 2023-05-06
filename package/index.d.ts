@@ -8,12 +8,13 @@ declare class RibbonContainer extends React.Component<RibbonContainerProps, any>
 
 export interface RibbonProps {
   side: "right" | "left"
-  type: "edge" | "corner"
+  type: "corner" | "edge"
   size: "normal" | "large"
   children: React.ReactNode
-  backgroundColor: string
-  color: string
+  backgroundColor?: string
+  color?: string
   fontFamily?: string
+  withStripes?: boolean
 }
 
 export class Ribbon extends React.Component<RibbonProps, any> { }

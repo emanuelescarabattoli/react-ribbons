@@ -116,9 +116,37 @@ pre[class*="language-"] {
 
 .columns {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 2fr;
   grid-column-gap: 2rem;
   margin-bottom: 4rem;
+}
+
+table.propertiesTable {
+  border: solid 1px #cccccc;
+  border-radius: 5px;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+table.propertiesTable th {
+  background-color: #e0e0e0;
+}
+
+table.propertiesTable td,
+table.propertiesTable th {
+  border: solid 1px #cccccc;
+  padding: .5rem 1rem;
+  text-align: left;
+}
+
+code {
+  background-color: #e0e0e0;
+  padding: .25rem;
+  color: rgb(156, 0, 156);
+  display: inline-block;
+  margin: 0 .25rem;
+  border: solid 1px #d8d8d8;
+  border-radius: 3px;
 }
 
 @media (max-width: 1366px) {
