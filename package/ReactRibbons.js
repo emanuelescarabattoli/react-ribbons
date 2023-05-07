@@ -68,7 +68,7 @@ RightCornerLargeRibbon.defaultProps = commonDefaultProps;
 
 const LeftCornerRibbon = ({ children, backgroundColor, color, fontFamily, withStripes }) => {
   return (
-    <div className={style.leftCornerRibbon} style={withStripes ? { top: "-10px", left: "-10px" } : { top: "0", right: "0" }}>
+    <div className={style.leftCornerRibbon} style={withStripes ? { top: "-10px", left: "-10px" } : { top: "0", left: "0" }}>
       <svg height="70" width="70">
         <g transform="rotate(-90, 35, 35)">
           {withStripes ? <polygon points="0 0, 0 10, 10 10" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
@@ -86,7 +86,7 @@ LeftCornerRibbon.defaultProps = commonDefaultProps;
 
 const LeftCornerLargeRibbon = ({ children, backgroundColor, color, fontFamily, withStripes }) => {
   return (
-    <div className={style.leftCornerLargeRibbon} style={withStripes ? { top: "-12px", left: "-12px" } : { top: "0", right: "0" }}>
+    <div className={style.leftCornerLargeRibbon} style={withStripes ? { top: "-12px", left: "-12px" } : { top: "0", left: "0" }}>
       <svg height="84" width="84">
         <g transform="rotate(-90, 42, 42)">
           {withStripes ? <polygon points="0 0, 0 12, 12 12" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
@@ -106,8 +106,8 @@ const RightRibbon = ({ children, backgroundColor, color, fontFamily, withStripes
   return (
     <div className={style.rightRibbon} style={withStripes ? { top: "-0", right: "-10px" } : { top: "0", right: "0" }}>
       <svg height="40" width="70">
-        {withStripes ? <polygon points="0 10, 10 20, 0 30, 70 30, 70 10" fill={backgroundColor} strokeWidth="0" /> : <></>}
-        <polygon points="60 40, 60 30, 70 30" fill={`${backgroundColor}77`} strokeWidth="0" />
+        <polygon points="0 10, 10 20, 0 30, 70 30, 70 10" fill={backgroundColor} strokeWidth="0" />
+        {withStripes ? <polygon points="60 40, 60 30, 70 30" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
       </svg>
       <span style={{ color, fontFamily }} className={style.rightRibbonText}>{children}</span>
     </div>
@@ -119,10 +119,10 @@ RightRibbon.defaultProps = commonDefaultProps;
 
 const RightLargeRibbon = ({ children, backgroundColor, color, fontFamily, withStripes }) => {
   return (
-    <div className={style.rightLargeRibbon} style={withStripes ? { top: "0", right: "-12px" } : { top: "0", right: "0" }}>
+    <div className={style.rightLargeRibbon} style={withStripes ? { top: "0", right: "-15px" } : { top: "0", right: "0" }}>
       <svg height="60" width="90">
-        {withStripes ? <polygon points="0 15, 15 30, 0 45, 90 45, 90 15" fill={backgroundColor} strokeWidth="0" /> : <></>}
-        <polygon points="75 60, 75 40, 90 45" fill={`${backgroundColor}77`} strokeWidth="0" />
+        <polygon points="0 15, 15 30, 0 45, 90 45, 90 15" fill={backgroundColor} strokeWidth="0" />
+        {withStripes ? <polygon points="75 60, 75 40, 90 45" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
       </svg>
       <span style={{ color, fontFamily }} className={style.rightLargeRibbonText}>{children}</span>
     </div>
@@ -134,11 +134,11 @@ RightLargeRibbon.defaultProps = commonDefaultProps;
 
 const LeftRibbon = ({ children, backgroundColor, color, fontFamily, withStripes }) => {
   return (
-    <div className={style.leftRibbon} style={withStripes ? { top: "-0", left: "-10px" } : { top: "0", right: "0" }}>
+    <div className={style.leftRibbon} style={withStripes ? { top: "-0", left: "-12px" } : { top: "0", left: "0" }}>
       <svg height="40" width="70">
         <g transform="scale(-1,1) translate(-70, 0)">
-          {withStripes ? <polygon points="0 10, 10 20, 0 30, 70 30, 70 10" fill={backgroundColor} strokeWidth="0" /> : <></>}
-          <polygon points="60 40, 60 30, 70 30" fill={`${backgroundColor}77`} strokeWidth="0" />
+          <polygon points="0 10, 10 20, 0 30, 70 30, 70 10" fill={backgroundColor} strokeWidth="0" />
+          {withStripes ? <polygon points="60 40, 60 30, 70 30" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
         </g>
       </svg>
       <span style={{ color, fontFamily }} className={style.leftRibbonText}>{children}</span>
@@ -151,11 +151,11 @@ LeftRibbon.defaultProps = commonDefaultProps;
 
 const LeftLargeRibbon = ({ children, backgroundColor, color, fontFamily, withStripes }) => {
   return (
-    <div className={style.leftLargeRibbon} style={withStripes ? { top: "-0", left: "-12px" } : { top: "0", right: "0" }}>
+    <div className={style.leftLargeRibbon} style={withStripes ? { top: "-0", left: "-15px" } : { top: "0", left: "0" }}>
       <svg height="60" width="90">
         <g transform="scale(-1,1) translate(-90, 0)">
-          {withStripes ? <polygon points="0 15, 15 30, 0 45, 90 45, 90 15" fill={backgroundColor} strokeWidth="0" /> : <></>}
-          <polygon points="75 60, 75 40, 90 45" fill={`${backgroundColor}77`} strokeWidth="0" />
+          <polygon points="0 15, 15 30, 0 45, 90 45, 90 15" fill={backgroundColor} strokeWidth="0" />
+          {withStripes ? <polygon points="75 60, 75 40, 90 45" fill={`${backgroundColor}77`} strokeWidth="0" /> : <></>}
         </g>
       </svg>
       <span style={{ color, fontFamily }} className={style.leftLargeRibbonText}>{children}</span>
