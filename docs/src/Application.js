@@ -9,7 +9,7 @@ import { RibbonContainer, Ribbon } from "react-ribbons";
 const Application = () => {
   const [side, setSide] = useState("left");
   const [type, setType] = useState("corner");
-  const [size, setSize] = useState("large");
+  const [size, setSize] = useState("normal");
   const [backgroundColor, setBackgroundColor] = useState("#cc0000");
   const [color, setColor] = useState("#ccffff");
   const [fontFamily, setFontFamily] = useState("sans");
@@ -149,19 +149,84 @@ yarn add react-ribbons
             Here you can find a demo on how to use the package
           </p>
         </div>
+        <div className={style.controlsWrapper}>
+          <div className={style.controlWrapper}>
+            <div className={style.labelWrapper}>
+              <span>Side</span>
+            </div>
+            <div className={style.buttonsWrapper}>
+              <button className={style.button} onClick={() => onChangeSide("left")}>Left</button>
+              <button className={style.button} onClick={() => onChangeSide("right")}>Right</button>
+            </div>
+          </div>
+          <div className={style.controlWrapper}>
+            <div className={style.labelWrapper}>
+              <span>Type</span>
+            </div>
+            <div className={style.buttonsWrapper}>
+              <button className={style.button} onClick={() => onChangeType("corner")}>Corner</button>
+              <button className={style.button} onClick={() => onChangeType("edge")}>Edge</button>
+            </div>
+          </div>
+          <div className={style.controlWrapper}>
+            <div className={style.labelWrapper}>
+              <span>Size</span>
+            </div>
+            <div className={style.buttonsWrapper}>
+              <button className={style.button} onClick={() => onChangeSize("normal")}>Normal</button>
+              <button className={style.button} onClick={() => onChangeSize("large")}>Large</button>
+            </div>
+          </div>
+          <div className={style.controlWrapper}>
+            <div className={style.labelWrapper}>
+              <span>Background color</span>
+            </div>
+            <div className={style.buttonsWrapper}>
+              <button className={style.button} onClick={() => onChangeBackgroundColor("#cc0000")}>#cc0000</button>
+              <button className={style.button} onClick={() => onChangeBackgroundColor("#00cc00")}>#00cc00</button>
+            </div>
+          </div>
+          <div className={style.controlWrapper}>
+            <div className={style.labelWrapper}>
+              <span>Color</span>
+            </div>
+            <div className={style.buttonsWrapper}>
+              <button className={style.button} onClick={() => onChangeColor("#ccffff")}>#ccffff</button>
+              <button className={style.button} onClick={() => onChangeColor("#ffff00")}>#ffff00</button>
+            </div>
+          </div>
+          <div className={style.controlWrapper}>
+            <div className={style.labelWrapper}>
+              <span>Font family</span>
+            </div>
+            <div className={style.buttonsWrapper}>
+              <button className={style.button} onClick={() => onChangeFontFamily("sans")}>Sans</button>
+              <button className={style.button} onClick={() => onChangeFontFamily("serif")}>Serif</button>
+            </div>
+          </div>
+          <div className={style.controlWrapper}>
+            <div className={style.labelWrapper}>
+              <span>With stripes</span>
+            </div>
+            <div className={style.buttonsWrapper}>
+              <button className={style.button} onClick={() => onChangeWithStripes(true)}>true</button>
+              <button className={style.button} onClick={() => onChangeWithStripes(false)}>false</button>
+            </div>
+          </div>
+        </div>
         <div className={style.columns}>
           <div className={style.code}>
             <PrismCode component="pre" className="language-html">
               {`
 <RibbonContainer className={style.demo}>
   <Ribbon
-    side="left"
-    type="corner"
-    size="large"
-    backgroundColor="#cc0000"
-    color="#ccffff"
-    fontFamily="sans"
-    withStripes
+    side="${side}"
+    type="${type}"
+    size="${size}"
+    backgroundColor="${backgroundColor}"
+    color="${color}"
+    fontFamily="${fontFamily}"
+    withStripes={${withStripes ? "true" : "false"}}
   >
     Foo bar
   </Ribbon>
