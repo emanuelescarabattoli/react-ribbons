@@ -216,4 +216,15 @@ code {
     margin-bottom: 4rem;
     width: 95%;
   }
+
+  table.propertiesTable td,
+  table.propertiesTable th {
+    padding: .25rem;
+  }
+
+  .controlsWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
 }
