@@ -74,7 +74,7 @@ const Application = () => {
           <PrismCode component="pre" className="language-shell">
             {`
 // NPMetup
-npm inall react-ribbons
+npm install react-ribbons
 // Yarsetup
 yarn add react-ribbons
                 `}
